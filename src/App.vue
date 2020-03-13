@@ -1,12 +1,23 @@
 <template>
   <div id="app">
-    <div id="nav">
+   <Slide>
+      <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
+   </Slide>
     <router-view/>
   </div>
 </template>
+
+<script>
+import { Slide } from 'vue-burger-menu'
+export default {
+  components: {
+        Slide // Register your component
+    }
+}
+</script>
 
 <style lang="scss">
 #app {
