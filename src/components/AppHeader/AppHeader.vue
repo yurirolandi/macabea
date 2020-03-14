@@ -37,7 +37,12 @@ export default {
         closeMenu.classList.remove("open");
       }
     }
-  }
+  },
+  watch: {
+    '$route' (){
+      this.close()
+    }
+  },
 };
 </script>
 
@@ -53,12 +58,6 @@ export default {
 
   @media (max-width: 992px) {
     height: 70px;
-  }
-
-  .header-logo {
-    @media (max-width: 992px) {
-      display: none;
-    }
   }
 
   .app-header-hamburg {
