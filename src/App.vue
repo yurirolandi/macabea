@@ -30,13 +30,16 @@ export default {
   text-align: center;
   color: #2c3e50;
 
-  .about,
-  .contact,
-  .home,
-  .package,
-  .rooms,
-  .tour {
+  .section {
     padding: 20px;
+
+    .container {
+      display: flex;
+      justify-content: space-evenly;
+      align-content: center;
+      flex-wrap: wrap;
+      padding: 30px;
+    }
   }
 }
 </style>

@@ -50,11 +50,12 @@ export default {
 .app-header {
   display: flex;
   justify-content: space-between;
-  height: 100px;
+  height: 80px;
   background-color: black;
   color: white;
   padding: 0 2rem;
   align-items: center;
+  width: 100%;
   .header-logo{
     display: block;
   }
