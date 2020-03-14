@@ -7,17 +7,16 @@
 
 
 <script>
-import AppHeader from './components/AppHeader/AppHeader';
+import AppHeader from "./components/AppHeader/AppHeader";
 export default {
   components: {
     AppHeader
   }
-}
+};
 </script>
 
 
 <style lang="scss">
-
 * {
   margin: 0;
   padding: 0;
@@ -30,5 +29,14 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
+  .about,
+  .contact,
+  .home,
+  .package,
+  .rooms,
+  .tour {
+    padding: 20px;
+  }
 }
 </style>

@@ -39,10 +39,10 @@ export default {
     }
   },
   watch: {
-    '$route' (){
-      this.close()
+    $route() {
+      this.close();
     }
-  },
+  }
 };
 </script>
 
@@ -55,6 +55,9 @@ export default {
   color: white;
   padding: 0 2rem;
   align-items: center;
+  .header-logo{
+    display: block;
+  }
 
   @media (max-width: 992px) {
     height: 70px;
@@ -112,6 +115,9 @@ export default {
     flex-direction: column;
     transition: 1s;
     .show-menu {
+      display: none;
+    }
+    .header-logo {
       display: none;
     }
     .menu {
