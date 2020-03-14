@@ -3,11 +3,11 @@
           <div class="menu">
             <font-awesome-icon icon="times" @click="close" class="close-menu" />
             <ul class="menu-content">
-                <li class="menu-content-item">INÍCIO</li>
-                <li class="menu-content-item">PASSEIOS</li>
-                <li class="menu-content-item">PACOTES</li>
-                <li class="menu-content-item">QUARTOS</li>
-                <li class="menu-content-item">CONTATO</li>
+                <li class="menu-content-item"><router-link to="/">INÍCIO</router-link></li>
+                <li class="menu-content-item"><router-link to="/tour">PASSEIOS</router-link></li>
+                <li class="menu-content-item"><router-link to="/package">PACOTES</router-link></li>
+                <li class="menu-content-item"><router-link to="/rooms">QUARTOS</router-link></li>
+                <li class="menu-content-item"><router-link to="/contact">CONTATO</router-link></li>
             </ul>
         </div>     
         <h2 class="header-logo">
@@ -88,9 +88,13 @@ export default {
         margin: 0 0.5rem;
         transition: 0.4s;
         cursor: pointer;
-        &:hover,
-        &:active {
-          color: #009dff;
+        a {
+          text-decoration: none;
+          color: white;
+          &:hover,
+          &:active {
+            color: #009dff;
+          }
         }
       }
     }
