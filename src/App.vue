@@ -2,15 +2,18 @@
   <div id="app">  
     <AppHeader />
     <router-view/>
+    <AppFooter />
   </div>
 </template>
 
 
 <script>
 import AppHeader from "./components/AppHeader/AppHeader";
+import AppFooter from "./components/AppFooter/AppFooter";
 export default {
   components: {
-    AppHeader
+    AppHeader,
+    AppFooter
   }
 };
 </script>
@@ -31,7 +34,20 @@ export default {
   color: #2c3e50;
 
   .section {
-    padding: 20px;
+    padding: 90px 20px;
+    .title {
+      span {
+        display: block;
+        height: 1px;
+        width: 100px;
+        margin: 0 auto;
+        background-color: #2c3e50;
+      }
+    }
+
+    .subtitle {
+      margin: 20px 0 30px 0;
+    }
 
     .container {
       display: flex;

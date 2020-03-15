@@ -1,14 +1,13 @@
 <template>
   <div class="home">
-   <div class="section">
-     <h1 class="title">
-     MACABÉA HOSTEL & POUSADA
-     <span />
-   </h1>
-
-   <div class="container">
+   <div class="section">   
+      <h1 class="title">
+         MACABÉA HOSTEL & POUSADA
+        <span />
+       </h1>
+   <div class="container">     
       <div class="box-img">
-        <img src="../assets/img/rooms/macabea.jpg" alt="">
+        <img class="macabea-logo" src="../assets/img/rooms/macabea.jpg" alt="">
       </div>
       <div class="box-text">        
         Nosso hostel e pousada em Paraty é o lugar ideal para relaxar, fazer amigos e se divertir. Oferecemos conforto, segurança e facilidades. Seja para você que está mochilando, viajando sozinho, com amigos ou com amigos estamos à disposição para dar as melhores dicas do que fazer para aproveitar o melhor de Paraty. A poucos passos do hostel você encontrará  uma vida noturna, com várias opções de restaurantes e bares, supermercado, praia, centro de informações turísticas e terminal rodoviário. Paraty é uma cidade pequena, histórica e inesquecível.
@@ -89,21 +88,10 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  .title {
-    span {
-      display: block;
-      height: 1px;
-      width: 100px;
-      margin: 0 auto;
-      background-color: #2c3e50;
-    }
-  }
-
-  .subtitle{
-    margin: 20px 0 30px 0;
-  }
-
   .section {
+    img.macabea-logo {
+      width: 100%;
+    }
     .box-text {
       max-width: 456px;
       text-align: justify;
@@ -119,15 +107,16 @@ export default {
       max-width: 1050px;
     }
 
-    .box{
-      p{
+    .box {
+      p {
         text-align: justify;
         font-size: 1.2rem;
         margin: 20px;
       }
 
-      .box-img{
+      .box-img {
         margin: 20px 0;
+        width: 100%;
       }
     }
   }

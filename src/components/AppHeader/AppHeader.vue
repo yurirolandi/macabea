@@ -56,6 +56,8 @@ export default {
   padding: 0 2rem;
   align-items: center;
   width: 100%;
+  position: fixed;
+  z-index: 10;
   .header-logo{
     display: block;
   }
@@ -115,6 +117,7 @@ export default {
     display: flex;
     flex-direction: column;
     transition: 1s;
+    z-index: 10;
     .show-menu {
       display: none;
     }
