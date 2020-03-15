@@ -1,6 +1,8 @@
 <template>
     <div class="rooms">
-        <h1>QUARTOS</h1>
+        <div class="section">
+            <h1>QUARTOS</h1>
+        </div>
     </div>
 </template>
 

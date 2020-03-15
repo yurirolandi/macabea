@@ -20,15 +20,15 @@
          <span />
         </h1> 
      <div class="card-content">
-        <Card cardText="Ar-Condicionado" cardIcon="snowflake" />
-        <Card cardText="Café da manhã" cardIcon="mug-hot" />
-        <Card cardText="Atendimento 24h" cardIcon="clock" />
-        <Card cardText="Wi-Fi" cardIcon="wifi" />     
+        <Card cardText="Ar-Condicionado" cardTitle="Macabéa Pousada e Hostel" cardIcon="snowflake" />
+        <Card cardText="Café da manhã" cardTitle="Macabéa Pousada e Hostel" cardIcon="mug-hot" />
+        <Card cardText="Atendimento 24h" cardTitle="Macabéa Pousada e Hostel" cardIcon="clock" />
+        <Card cardText="Wi-Fi" cardTitle="Macabéa Pousada e Hostel" cardIcon="wifi" />     
   
-        <Card cardText="Roupa de cama" cardIcon="bed" />
-        <Card cardText="Cozinha coletiva" cardIcon="utensils" />
-        <Card cardText="Bar" cardIcon="glass-cheers" />
-        <Card cardText="televisão" cardIcon="tv" />
+        <Card cardText="Roupa de cama" cardTitle="Macabéa Pousada e Hostel" cardIcon="bed" />
+        <Card cardText="Cozinha coletiva" cardTitle="Macabéa Pousada e Hostel" cardIcon="utensils" />
+        <Card cardText="Bar" cardTitle="Macabéa Pousada e Hostel" cardIcon="glass-cheers" />
+        <Card cardText="televisão" cardTitle="Macabéa Pousada e Hostel" cardIcon="tv" />
      </div>
    </div>
 
@@ -81,7 +81,7 @@
 import Card from "../components/shared/Card";
 export default {
   name: "Home",
-  props: ["cardText", "cardIcon"],
+  props: ["cardText", "cardIcon", "cardTitle"],
   components: { Card }
 };
 </script>
@@ -95,7 +95,7 @@ export default {
     .box-text {
       max-width: 456px;
       text-align: justify;
-      margin: 30px auto;
+      margin-top: 30px;
     }
 
     .card-content {

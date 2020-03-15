@@ -1,6 +1,8 @@
 <template>
     <div class="package">
-        <h1>PACOTES</h1>
+        <div class="section">
+            <h1>PACOTES</h1>
+        </div>    
     </div>
 </template>
 

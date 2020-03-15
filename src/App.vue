@@ -36,6 +36,9 @@ export default {
   .section {
     padding: 90px 20px;
     .title {
+      &:first-child{
+        margin-top: 30px;
+      }
       span {
         display: block;
         height: 1px;
@@ -43,6 +46,10 @@ export default {
         margin: 0 auto;
         background-color: #2c3e50;
       }
+    }
+
+    .text{
+      text-align: justify;
     }
 
     .subtitle {

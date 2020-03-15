@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <b-card bg-variant="dark"  header="Macabéa Pousada e Hostel" text-variant="white" class="text-center">
+        <b-card bg-variant="dark"  :header="cardTitle" text-variant="white" class="text-center">
         <b-card-text>
          <font-awesome-icon :icon="cardIcon" />  {{ cardText }}
         </b-card-text>
@@ -11,6 +11,7 @@
 <script>
 export default {
     name: 'Card',
-    props: ["cardText", "cardIcon"]
+    props: ["cardText", "cardIcon", "cardTitle"]
 }
 </script>
+

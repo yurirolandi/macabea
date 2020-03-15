@@ -1,12 +1,19 @@
 <template>
     <div class="contact">
-        <h1>CONTATO</h1>
+        <div class="section">
+            <h1 class="title">COMO PODEMOS TE AJUDAR? <span /></h1>                   
+            <AppForm />                  
+        </div>
     </div>
 </template>
 
 <script>
+import AppForm from '../components/AppForm/AppForm';
 export default {
-    name: 'Contact'
+    name: 'Contact',
+    components: {
+        AppForm
+    }
 }
 </script>
 
