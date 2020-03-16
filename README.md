@@ -1,4 +1,4 @@
-# macabea-vue
+# macabea
 
 ## Project setup
 ```
