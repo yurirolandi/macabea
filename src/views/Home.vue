@@ -20,15 +20,15 @@
          <span />
         </h1> 
      <div class="card-content">
-        <Card cardText="Ar-Condicionado" cardTitle="Macabéa Pousada e Hostel" cardIcon="snowflake" />
-        <Card cardText="Café da manhã" cardTitle="Macabéa Pousada e Hostel" cardIcon="mug-hot" />
-        <Card cardText="Atendimento 24h" cardTitle="Macabéa Pousada e Hostel" cardIcon="clock" />
-        <Card cardText="Wi-Fi" cardTitle="Macabéa Pousada e Hostel" cardIcon="wifi" />     
+        <Card data-aos="flip-left" cardText="Ar-Condicionado" cardTitle="Macabéa Pousada e Hostel" cardIcon="snowflake" />
+        <Card data-aos="flip-left" cardText="Café da manhã" cardTitle="Macabéa Pousada e Hostel" cardIcon="mug-hot" />
+        <Card data-aos="flip-left" cardText="Atendimento 24h" cardTitle="Macabéa Pousada e Hostel" cardIcon="clock" />
+        <Card data-aos="flip-left" cardText="Wi-Fi" cardTitle="Macabéa Pousada e Hostel" cardIcon="wifi" />     
   
-        <Card cardText="Roupa de cama" cardTitle="Macabéa Pousada e Hostel" cardIcon="bed" />
-        <Card cardText="Cozinha coletiva" cardTitle="Macabéa Pousada e Hostel" cardIcon="utensils" />
-        <Card cardText="Bar" cardTitle="Macabéa Pousada e Hostel" cardIcon="glass-cheers" />
-        <Card cardText="televisão" cardTitle="Macabéa Pousada e Hostel" cardIcon="tv" />
+        <Card data-aos="flip-left" cardText="Roupa de cama" cardTitle="Macabéa Pousada e Hostel" cardIcon="bed" />
+        <Card data-aos="flip-left" cardText="Cozinha coletiva" cardTitle="Macabéa Pousada e Hostel" cardIcon="utensils" />
+        <Card data-aos="flip-left" cardText="Bar" cardTitle="Macabéa Pousada e Hostel" cardIcon="glass-cheers" />
+        <Card data-aos="flip-left" cardText="televisão" cardTitle="Macabéa Pousada e Hostel" cardIcon="tv" />
      </div>
    </div>
 
@@ -55,14 +55,14 @@
    <div class="box">
       <h4 class="subtitle">Nós te ajudamos a ter uma experiência completa em Paraty!</h4>
       <b-row>
-        <b-col>
+        <b-col data-aos="flip-left">
             <img class="box-img" src="../assets/img/rooms/experiencia.jpg" alt="">
           <h3 class="title">EXPERIÊNCIAS<span /></h3>
           <p>
             Nossa equipe está preparada para marcar com você um encontro. Venha ter experiências conosco. Oferecemos, com agendamento, um dia de slackline na praia. Um trabalho que integra experiências corporais, como alongamentos e yoga. Marque também sua nova tatoo, o tatuador Juan Andres cuidará de todos os detalhes, garantindo segurança e qualidade no procedimento.
           </p>
         </b-col>
-        <b-col>
+        <b-col data-aos="flip-left">
             <img class="box-img" src="../assets/img/rooms/passeios.jpg" alt="">
           <h3 class="title">PASSEIOS<span /></h3>
           <p>

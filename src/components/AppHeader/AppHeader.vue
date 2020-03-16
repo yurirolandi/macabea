@@ -117,7 +117,7 @@ export default {
     display: flex;
     flex-direction: column;
     transition: 1s;
-    z-index: 10;
+    z-index: 100;
     .show-menu {
       display: none;
     }
