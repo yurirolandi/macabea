@@ -7,7 +7,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'Macabéa',
     component: Home
   },
   {
@@ -17,22 +17,22 @@ const routes = [
   },
   {
     path: '/rooms',
-    name: 'Rooms',
+    name: 'Quartos',
     component: () => import('../views/Rooms.vue')
   },
   {
     path: '/tour',
-    name: 'Tour',
+    name: 'Passeios',
     component: () => import('../views/Tour.vue')
   },
   {
     path: '/package',
-    name: 'Package',
+    name: 'Pacotes',
     component: () => import('../views/Package.vue')
   },
   {
     path: '/contact',
-    name: 'Contact',
+    name: 'Contato',
     component: () => import('../views/Contact.vue')
   }
 ]

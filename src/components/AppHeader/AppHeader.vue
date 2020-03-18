@@ -11,7 +11,7 @@
             </ul>
         </div>     
         <h2 class="header-logo">
-            Macabéa
+            {{ titlePage }}
         </h2>      
         <div class="app-header-hamburg">
             <font-awesome-icon icon="bars"  @click="open" class="show-menu" />
@@ -23,7 +23,9 @@
 export default {
   name: "AppHeader",
   data() {
-    return {};
+    return {
+      titlePage: "Macabéa"
+    };
   },
   methods: {
     open() {
@@ -41,6 +43,7 @@ export default {
   watch: {
     $route() {
       this.close();
+      this.titlePage = this.$route.name;
     }
   }
 };
@@ -58,8 +61,10 @@ export default {
   width: 100%;
   position: fixed;
   z-index: 10;
-  .header-logo{
+  .header-logo {
     display: block;
+    text-transform: uppercase;
+    margin-bottom: 0;
   }
 
   @media (max-width: 992px) {
@@ -85,6 +90,7 @@ export default {
     .menu-content {
       list-style: none;
       display: flex;
+      margin-bottom: 0;
       @media (max-width: 992px) {
         display: none;
       }
@@ -96,8 +102,10 @@ export default {
         a {
           text-decoration: none;
           color: white;
-          &:hover,
-          &:active {
+          &:hover {
+            color: #009dff;
+          }
+          &.router-link-exact-active {
             color: #009dff;
           }
         }
@@ -113,7 +121,7 @@ export default {
 
   &.open {
     height: 100vh;
-    opacity: 0.9;
+    opacity: 0.96;
     display: flex;
     flex-direction: column;
     transition: 1s;
