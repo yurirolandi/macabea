@@ -1,23 +1,86 @@
 <template>
-<div class="app-form">
-    <div class="container">
-       
-      <b-row>     
-        <b-col>          
-           <form action="POST">
-                <input class="form-input" type="text" placeholder="Nome">
-                <p class="for-error">Nome inválido</p>
+<div class="app-form"> 
 
-                <input class="form-input" type="tel" maxlength="15" placeholder="Telefone">
-                <p class="for-error">Telefone inválido</p>
+  <div class="container">   
+      <b-row>
+        <b-col sm="6" class="mb-5">       
+            <form @submit.prevent="submitForm">
+              <div class="form-group">
+                <label class="form-title">Nome:</label>
+                <input type="text" class="form-control" v-model.trim="$v.form.name.$model"
+                :class="{
+                  'is-invalid' :$v.form.name.$error,
+                  'is-valid' :!$v.form.name.$invalid
+                }">
+                <div class="valid-feedback">Nome válido!</div>
+                <div class="invalid-feedback">
+                  <span v-if="!$v.form.name.required">Nome precisa ser preenchido!</span>
+                  <span v-if="!$v.form.name.minLength">Nome precisa ter no minimo {{$v.form.name.$params.minLength.min}} caracteres!</span>
+                </div>
+              </div>
 
-                <input class="form-input" type="email" placeholder="Email">
-                <p class="for-error">Email inválido</p>
 
-                <textarea class="text-area" name="" id="" cols="33" rows="6"></textarea>
-                <button class="btn-send">Enviar</button>
+              <div class="form-group">
+                <label class="form-title">Email:</label>
+                <input type="email" class="form-control" v-model.trim.lazy="$v.form.email.$model"
+                :class="{
+                  'is-invalid':$v.form.email.$error,
+                  'is-valid':!$v.form.email.$invalid
+                }">
+                <div class="valid-feedback">E-mail válido!</div>
+                <div class="invalid-feedback">
+                  <span v-if="!$v.form.email.required">E-mail precisa ser preenchido!</span>
+                </div>
+              </div>
+
+               <div class="form-group">
+                <label class="form-title">Telefone:</label>
+                <input 
+                  placeholder="Ex: (xx) xxxx-xxxxx"
+                  type="number" 
+                  class="form-control"
+                  v-model.number.lazy="$v.form.phone.$model"
+                  :class="{
+                    'is-invalid':$v.form.phone.$error,
+                    'is-valid':!$v.form.phone.$invalid
+                  }">
+                <div class="valid-feedback">Numero de telefone válido!</div>
+                <div class="invalid-feedback">
+                  <span v-if="!$v.form.phone.required">Numero de telefone precisa ser preenchido!</span>
+                  <span v-if="!$v.form.phone.numeric">
+                    Digite um numero válido
+                  </span>
+                </div>
+              </div>
+
+
+
+              <div class="form-group">     
+                <textarea cols="30"
+                class="form-control"
+                v-model.trim.lazy="$v.form.text.$model" 
+                :class="{
+                  'is-invalid' :$v.form.text.$error,
+                  'is-valid' :!$v.form.text.$invalid
+                }"
+                rows="10" />
+                <div class="invalid-feedback">
+                  <span v-if="!$v.form.text.required">Escreva a sua sugestão!</span>
+                  <span v-if="!$v.form.text.minLength">Mensagem deve ter no minimo {{$v.form.text.$params.minLength.min}} caracteres!</span>
+                </div>
+              </div>
+
+            <button @click="submitForm"
+              type="submit" 
+              id="show-modal"               
+              class="btn-send">
+              Enviar 
+              {{ submitstatus }}
+            </button>           
+
             </form>
         </b-col>   
+
         <b-col>
           <ul class="box-info">
               <li>E-mail: macabea.me@gmail.com</li>
@@ -48,19 +111,66 @@
                 </a>
               </div>
         </b-col>
-
       </b-row>
-     
-    </div>
+   </div>
 </div>
-
 </template>
 
 <script>
+import { required, minLength, email, numeric } from "vuelidate/lib/validators";
+
 export default {
   name: "AppForm",
+  props: ['modalHeader', 'modalText', 'modalFooter'],
   data() {
-    return {};
+    return {
+      showModal: false,
+      form: {
+        name: "",
+        email: "",
+        phone: "",
+        text: ""
+      },
+      submitstatus: null
+    };
+  },
+  validations: {
+    form: {
+      name: {
+        required,
+        minLength: minLength(3)
+      },
+      text: {
+        required,
+        minLength: minLength(5)
+      },
+      email: {
+        required,
+        email
+      },
+      phone: {
+        required,
+        numeric,
+        minLength: minLength(11)
+      }
+    }
+  },
+  methods: {
+    submitForm() {
+      this.$v.form.$touch();
+      this.$v.form.$invalid
+        ? (this.submitstatus = "ERRO")
+        : (this.submitstatus = "ENVIADO");
+
+      this.$http.post("form.json", this.form)
+        .then(res => {
+          this.form.name = "";
+          this.form.email = "";
+          this.form.text = "";
+          this.form.phone = "";
+          console.log(res)
+      });
+    }
   }
 };
 </script>
@@ -68,33 +178,17 @@ export default {
 <style lang="scss" scoped>
 .app-form {
   form {
-    p {
-      text-align: left;
-      margin: 0.4rem;
-      color: #c0392b;
-      opacity: 0;
-      transition: 0.3s ease;
-    }
-    .form-input {
-      padding: 5px;
-      width: 100%;
-      &:focus {
-        outline: none !important;
-        border: 2px solid #3d9ce97c;
-      }
+    .form-control {
       &::-webkit-outer-spin-button,
       &::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
       }
     }
-    .text-area {
-      padding: 0.3rem;
-      width: 100%;
-      &:focus {
-        outline: none !important;
-        border: 1px solid #3d9ce97c;
-      }
+
+    .form-title {
+      text-align: left;
+      display: block;
     }
     .btn-send {
       display: block;
@@ -108,6 +202,7 @@ export default {
       }
     }
   }
+
   .container .box-info {
     list-style: none;
     margin-top: 0.5rem;
@@ -121,7 +216,8 @@ export default {
     color: #fff;
     background-color: black;
     max-width: 100px;
-    a{
+    cursor: pointer;
+    a {
       color: #fff;
       text-decoration: none;
     }
@@ -148,6 +244,8 @@ export default {
     width: 100%;
     margin: 0.8rem 0;
   }
+  
+
 }
 </style>
 
