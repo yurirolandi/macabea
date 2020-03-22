@@ -2,6 +2,20 @@
 <div class="app-form"> 
 
   <div class="container">   
+    <Modal v-if="show" modalFoooter="OK">
+      <h1 slot="header">Mensagem:</h1>
+      <h3 slot="body" 
+        :class="{
+          'is-erro' : this.submitstatus === 'ERRO',
+          'is-valid' : this.submitstatus === 'ENVIADO'
+        }">
+        {{ submitstatus }}
+      </h3>
+      <div slot="footer">
+        <button class="btn-ver" @click="show = false">OK</button>
+      </div>
+    </Modal>
+
       <b-row>
         <b-col sm="6" class="mb-5">       
             <form @submit.prevent="submitForm">
@@ -75,7 +89,6 @@
               id="show-modal"               
               class="btn-send">
               Enviar 
-              {{ submitstatus }}
             </button>           
 
             </form>
@@ -118,10 +131,13 @@
 
 <script>
 import { required, minLength, email, numeric } from "vuelidate/lib/validators";
-
+import Modal from '../shared/Modal';
 export default {
   name: "AppForm",
   props: ['modalHeader', 'modalText', 'modalFooter'],
+  components: {
+    Modal
+  },
   data() {
     return {
       showModal: false,
@@ -131,7 +147,8 @@ export default {
         phone: "",
         text: ""
       },
-      submitstatus: null
+      submitstatus: null,
+      show: false
     };
   },
   validations: {
@@ -158,18 +175,22 @@ export default {
   methods: {
     submitForm() {
       this.$v.form.$touch();
-      this.$v.form.$invalid
-        ? (this.submitstatus = "ERRO")
-        : (this.submitstatus = "ENVIADO");
-
-      this.$http.post("form.json", this.form)
-        .then(res => {
-          this.form.name = "";
-          this.form.email = "";
-          this.form.text = "";
-          this.form.phone = "";
-          console.log(res)
-      });
+      if (this.$v.form.$invalid){
+        this.submitstatus = "ERRO"
+        this.show = true
+      } else {
+        this.submitstatus = "ENVIADO"
+          
+        this.$http.post("form.json", this.form)
+          .then(res => {
+            this.form.name = "";
+            this.form.email = "";
+            this.form.text = "";
+            this.form.phone = "";
+            console.log(res)
+            this.show = true
+        });
+      }
     }
   }
 };
@@ -207,6 +228,12 @@ export default {
     list-style: none;
     margin-top: 0.5rem;
     margin-bottom: 0;
+  }
+  h3.is-erro{
+    color: red;
+  }
+  h3.is-valid{
+    color: green
   }
   .btn-ver {
     display: block;
