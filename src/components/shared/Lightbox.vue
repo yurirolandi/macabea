@@ -76,6 +76,9 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  img{
+    width: 100%
+  }
   .lightbox-open {
     background: rgba(0, 0, 0, 0.9);
     display: flex;
@@ -116,6 +119,8 @@ export default {
       .arrow {
         cursor: pointer;
         color: white;
+        font-size: 1.5rem;
+        margin: 0 10px;
       }
       .lightbox-image {
         img {
