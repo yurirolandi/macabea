@@ -18,7 +18,7 @@
 
       <b-row>
         <b-col sm="6" class="mb-5">       
-            <form @submit.prevent="submitForm">
+            <form>
               <div class="form-group">
                 <label class="form-title">Nome:</label>
                 <input type="text" class="form-control" v-model.trim="$v.form.name.$model"
@@ -173,7 +173,9 @@ export default {
     }
   },
   methods: {
-    submitForm() {
+    submitForm(evt) {
+      evt.preventDefault();
+      
       this.$v.form.$touch();
       if (this.$v.form.$invalid){
         this.submitstatus = "ERRO"
@@ -182,12 +184,12 @@ export default {
         this.submitstatus = "ENVIADO"
           
         this.$http.post("form.json", this.form)
+        // eslint-disable-next-line
           .then(res => {
             this.form.name = "";
             this.form.email = "";
             this.form.text = "";
             this.form.phone = "";
-            console.log(res)
             this.show = true
         });
       }
