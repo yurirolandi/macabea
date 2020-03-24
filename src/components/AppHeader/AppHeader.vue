@@ -31,12 +31,16 @@ export default {
     open() {
       let openMenu = document.querySelector(".app-header");
       openMenu.classList.add("open");
+      let body = document.querySelector('body');
+      body.style.overflow = 'hidden'
     },
-
+    
     close() {
       let closeMenu = document.querySelector(".app-header");
       if (closeMenu.classList.contains("open")) {
         closeMenu.classList.remove("open");
+        let body = document.querySelector('body');
+        body.style.overflow = 'initial'
       }
     }
   },
@@ -136,10 +140,9 @@ export default {
       @media (max-width: 992px) {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
         height: 100vh;
-        margin: 2rem 0;
       }
       .menu-content {
         @media (max-width: 992px) {
@@ -150,7 +153,7 @@ export default {
         .menu-content-item {
           @media (max-width: 992px) {
             flex-direction: column;
-            margin: 1.5rem 0;
+            margin: 1rem 0;
             padding: 10px 0;
           }
         }
@@ -160,7 +163,7 @@ export default {
       @media (max-width: 992px) {
         display: block;
         z-index: 3;
-        margin: 2rem 0;
+        margin: 2rem 0 1rem 0;
       }
     }
   }
