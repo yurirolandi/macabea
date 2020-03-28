@@ -125,7 +125,7 @@ export default {
 .before-enter {
   opacity: 0;
   transform: rotateY(-100deg);
-  transition: all 1s;
+  transition: all 0.5s;
 }
 .enter {
   opacity: 1;
