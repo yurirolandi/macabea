@@ -2,8 +2,8 @@
     <div class="card-room">
             <div class="box">
                 <div class="box-content">
-                    <div class="foto">
-                       <img src="../../assets/img/rooms/1.jpeg" alt="">
+                    <div class="foto">                  
+                        <Lightbox :thumbnail="img" :images="img" />
                     </div>
                 </div>
                 <div class="box-content">
@@ -29,11 +29,27 @@
                     </div>
                 </div>
             </div>
+
+           
     </div>
+    
 </template>
 
 <script>
-export default {};
+import Lightbox from '../shared/Lightbox';
+const link = require('../../assets/img/rooms/1.jpeg')
+export default {
+  name: 'CardRoom',
+  props: ['images', 'thumbnail'],
+  components:{
+    Lightbox
+  },
+  data() {
+    return {
+      img: link
+    }
+  },
+};
 </script>
 
 <style lang="scss" scoped>

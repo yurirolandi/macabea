@@ -12,7 +12,7 @@
                  <font-awesome-icon icon="arrow-left"  />  
               </div>
               <div class="lightbox-image">
-                  <img :src="images[index]">
+                  <img :src="images">
               </div>
               <div class="arrow"
                    @click.stop="next"
@@ -41,11 +41,11 @@ export default {
     return {
       visible: false,
       index: 0
-    };
+    }
   },
   methods: {
     show() {
-      this.visible = true;
+      this.visible = true;    
     },
     hide() {
       this.visible = false;
@@ -76,8 +76,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  img{
-    width: 100%
+  img {
+    width: 100%;
   }
   .lightbox-open {
     background: rgba(0, 0, 0, 0.9);
@@ -87,7 +87,9 @@ export default {
     position: fixed;
     z-index: 50;
     width: 100%;
-    height: calc(100vh + 30vh);
+    left: 0;
+    top: 0;
+    height: 100%;
     .close-light {
       position: absolute;
       top: 20%;
@@ -124,7 +126,7 @@ export default {
       }
       .lightbox-image {
         img {
-          width: 100%;
+          width: 50%;
         }
       }
     }
