@@ -4,11 +4,13 @@
 
     <teste />
 
+  <h1 class="title">
+      MACABÉA HOSTEL & POUSADA
+    <span />
+  </h1>
+
    <div class="container">     
-       <h1 class="title">
-         MACABÉA HOSTEL & POUSADA
-        <span />
-       </h1>
+     
       <div class="box-img">
         <img class="macabea-logo" src="../assets/img/rooms/macabea.jpg" alt="">
       </div>
