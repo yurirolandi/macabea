@@ -94,6 +94,7 @@ export default {
     .menu-content {
       list-style: none;
       display: flex;
+      
       margin-bottom: 0;
       @media (max-width: 992px) {
         display: none;
@@ -140,7 +141,7 @@ export default {
       @media (max-width: 992px) {
         display: flex;
         flex-direction: column;
-        justify-content: start;
+        justify-content: flex-start;
         align-items: center;
         height: 100vh;
       }

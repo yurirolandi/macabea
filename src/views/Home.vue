@@ -1,11 +1,14 @@
 <template>
   <div class="home">
    <div class="section">   
-      <h1 class="title">
+
+    <teste />
+
+   <div class="container">     
+       <h1 class="title">
          MACABÉA HOSTEL & POUSADA
         <span />
        </h1>
-   <div class="container">     
       <div class="box-img">
         <img class="macabea-logo" src="../assets/img/rooms/macabea.jpg" alt="">
       </div>
@@ -51,6 +54,7 @@
       PARCEIROS
      <span />
    </h1>
+ 
 
    <div class="box">
       <h4 class="subtitle">Nós te ajudamos a ter uma experiência completa em Paraty!</h4>
@@ -73,16 +77,18 @@
    </div>
 
    </div>
+     
    </div>
   </div>
 </template>
 
 <script>
 import Card from "../components/shared/Card";
+import teste from "../components/shared/teste";
 export default {
   name: "Home",
   props: ["cardText", "cardIcon", "cardTitle"],
-  components: { Card }
+  components: { Card, teste }
 };
 </script>
 
