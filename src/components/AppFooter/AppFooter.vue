@@ -5,7 +5,7 @@
                 <b-col>
                     <h4 class="title">Macabéa Hostel & Pousada</h4>
                      <ul class="box-info">
-                        <li>Largo do Rozário, 373, Centro Histórico, 23970-000</li>
+                        <li>Rua Dom João VI 505 Jabaquara</li>
                         <li>Paraty - Rio de Janeiro</li>
                     </ul> 
                 </b-col>
@@ -14,7 +14,7 @@
                     <ul class="box-info">
                         <li>Em caso de dúvidas, entre em contato:</li>
                         <li>E-mail: macabea.me@gmail.com</li>
-                        <li>Telefone: (24) 3371-9484</li>
+                        <li>Telefone: (24) 99214-6355</li>
                     </ul>       
                     <ul class="social-media">
                         <li>

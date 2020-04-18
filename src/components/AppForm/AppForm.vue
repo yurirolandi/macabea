@@ -97,7 +97,7 @@
         <b-col>
           <ul class="box-info">
               <li>E-mail: macabea.me@gmail.com</li>
-              <li>Telefone: (24) 3371-9484</li>
+              <li>Telefone: (24) 99214-6355</li>
           </ul>       
             <ul class="social-media">
               <li>
