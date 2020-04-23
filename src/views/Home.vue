@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <teste class="paddig-top" />
+    <Slide class="paddig-top" />
 
    <div class="section">     
   <h1 class="title">
@@ -85,11 +85,11 @@
 
 <script>
 import Card from "../components/shared/Card";
-import teste from "../components/shared/teste";
+import Slide from "../components/shared/Slide";
 export default {
   name: "Home",
   props: ["cardText", "cardIcon", "cardTitle"],
-  components: { Card, teste }
+  components: { Card, Slide }
 };
 </script>
 

@@ -64,7 +64,7 @@ export default {
   align-items: center;
   width: 100%;
   position: fixed;
-  z-index: 10;
+  z-index: 50;
   .header-logo {
     display: block;
     text-transform: uppercase;
