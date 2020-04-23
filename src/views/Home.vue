@@ -1,9 +1,8 @@
 <template>
   <div class="home">
-   <div class="section">   
+    <teste class="paddig-top" />
 
-    <teste />
-
+   <div class="section">     
   <h1 class="title">
       MACABÉA HOSTEL & POUSADA
     <span />
@@ -96,6 +95,9 @@ export default {
 
 <style lang="scss" scoped>
 .home {
+  .paddig-top{
+    padding-top: 55px;
+  }
   .section {
     img.macabea-logo {
       width: 100%;

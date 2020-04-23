@@ -17,7 +17,7 @@
     </Modal>
 
       <b-row>
-        <b-col sm="6" class="mb-5">       
+        <b-col class="mb-5 mr-5">       
             <form>
               <div class="form-group">
                 <label class="form-title">Nome:</label>
@@ -99,7 +99,7 @@
               <li>E-mail: macabea.me@gmail.com</li>
               <li>Telefone: (24) 99214-6355</li>
           </ul>       
-            <ul class="social-media">
+            <ul class="social-media mb-5">
               <li>
                 <a href="https://www.instagram.com/macabeahostel/?hl=pt-br" target="blank">
                   <img class="social-link" src="../../assets/svg/instagram.svg" >
@@ -116,13 +116,9 @@
                 </a>
               </li>
             </ul>    
-
-            <img src="../../assets/img/rooms/mapa.jpg" class="mapa" alt="Macabéa">
-              <div class="btn-ver">
-                <a target="blank" href="https://www.google.com/maps/place/Macab%C3%A9a+hostel+e+Pousada/@-23.21948,-44.716125,13.99z/data=!4m8!3m7!1s0x0:0x93a9ac904ce144da!5m2!4m1!1i2!8m2!3d-23.2191057!4d-44.7147621?hl=pt-BR">
-                  Ver mais
-                </a>
-              </div>
+            
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.6622020382056!2d-44.71691088539264!3d-23.218978054921703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9d6d240f8b1a71%3A0x93a9ac904ce144da!2sMacab%C3%A9a%20hostel%20e%20Pousada!5e0!3m2!1spt-BR!2sbr!4v1569877828747!5m2!1spt-BR!2sbr" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+          
         </b-col>
       </b-row>
    </div>
@@ -131,10 +127,10 @@
 
 <script>
 import { required, minLength, email, numeric } from "vuelidate/lib/validators";
-import Modal from '../shared/Modal';
+import Modal from "../shared/Modal";
 export default {
   name: "AppForm",
-  props: ['modalHeader', 'modalText', 'modalFooter'],
+  props: ["modalHeader", "modalText", "modalFooter"],
   components: {
     Modal
   },
@@ -175,23 +171,24 @@ export default {
   methods: {
     submitForm(evt) {
       evt.preventDefault();
-      
+
       this.$v.form.$touch();
-      if (this.$v.form.$invalid){
-        this.submitstatus = "ERRO"
-        this.show = true
+      if (this.$v.form.$invalid) {
+        this.submitstatus = "ERRO";
+        this.show = true;
       } else {
-        this.submitstatus = "ENVIADO"
-          
-        this.$http.post("form.json", this.form)
-        // eslint-disable-next-line
+        this.submitstatus = "ENVIADO";
+
+        this.$http
+          .post("form.json", this.form)
+          // eslint-disable-next-line
           .then(res => {
             this.form.name = "";
             this.form.email = "";
             this.form.text = "";
             this.form.phone = "";
-            this.show = true
-        });
+            this.show = true;
+          });
       }
     }
   }
@@ -231,28 +228,11 @@ export default {
     margin-top: 0.5rem;
     margin-bottom: 0;
   }
-  h3.is-erro{
+  h3.is-erro {
     color: red;
   }
-  h3.is-valid{
-    color: green
-  }
-  .btn-ver {
-    display: block;
-    padding: 0.6rem;
-    border: none;
-    margin: 0.6rem auto;
-    color: #fff;
-    background-color: black;
-    max-width: 100px;
-    cursor: pointer;
-    a {
-      color: #fff;
-      text-decoration: none;
-    }
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.76);
-    }
+  h3.is-valid {
+    color: green;
   }
   .social-media {
     list-style: none;
@@ -273,8 +253,6 @@ export default {
     width: 100%;
     margin: 0.8rem 0;
   }
-  
-
 }
 </style>
 
